@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Register · ORBITRA7</title>
+  <meta name="description" content="Register your team for ORBITRA7 — a 7-hour geospatial hackathon by ACM SIG SPATIAL. 10 October 2026. Only 35 teams.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23000'/%3E%3Cellipse cx='16' cy='16' rx='12' ry='5' fill='none' stroke='%239fd4ff' stroke-width='1.6' transform='rotate(-25 16 16)'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23fff'/%3E%3C/svg%3E">
+
+  <script>document.documentElement.classList.add('js')</script>
+
+  <!-- BG_REGISTER (black hole) only loads on this page -->
+  <link rel="preload" as="image" type="image/avif" href="assets/img/bg-blackhole.avif" media="(min-aspect-ratio: 1/1)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif" href="assets/img/bg-blackhole-m.avif" media="(max-aspect-ratio: 1/1)" fetchpriority="high">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500..800&family=Inter:wght@300..700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500..800&family=Inter:wght@300..700&display=swap"></noscript>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/common.js" defer></script>
+  <script src="assets/js/register.js" defer></script>
+</head>
+<body class="page-register">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="M14.1 5.55a2 2 0 0 0 1.8 0l3.65-1.83A1 1 0 0 1 21 4.62v12.76a1 1 0 0 1-.55.9l-4.55 2.27a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.65 1.83A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9L8.1 3.45a2 2 0 0 1 1.8 0z"/><path d="M15 5.76v15M9 3.24v15"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2.5"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2.5"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3.5" y="11" width="17" height="11" rx="2.5"/><path d="M7.5 11V7a4.5 4.5 0 0 1 9 0v4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5v5M12 16.5h.01"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 6.5V12l3.5 2"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.29.18-1.41-.08-.12-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 7c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41Z"/></symbol>
+  </svg>
+
+  <!-- Background: BG_REGISTER — black hole (barely-there zoom) + drifting star particles -->
+  <div class="bg bg--register" aria-hidden="true">
+    <div class="bg__move">
+      <picture>
+        <source type="image/avif" media="(max-aspect-ratio: 1/1)" srcset="assets/img/bg-blackhole-m.avif">
+        <source type="image/webp" media="(max-aspect-ratio: 1/1)" srcset="assets/img/bg-blackhole-m.webp">
+        <source type="image/avif" srcset="assets/img/bg-blackhole.avif">
+        <img class="bg__img" src="assets/img/bg-blackhole.webp" alt="" width="2398" height="1108" fetchpriority="high" decoding="async" onload="this.classList.add('is-loaded')">
+      </picture>
+    </div>
+    <div class="bg__shade"></div>
+  </div>
+  <canvas class="fx" id="stars" aria-hidden="true"></canvas>
+
+  <header class="nav" id="nav">
+    <nav class="nav__inner glass" aria-label="Main">
+      <a class="nav__back" href="index.html" data-transition aria-label="Back to ORBITRA7 home">
+        <svg class="icon" aria-hidden="true"><use href="#i-back"/></svg>
+        <span class="nav__word">ORBITRA7</span>
+      </a>
+      <img class="brand-logo" src="assets/img/acm-sigspatial.webp" alt="ACM SIGSPATIAL" width="400" height="166" decoding="async">
+    </nav>
+  </header>
+
+  <main class="reg wrap wrap--form">
+    <header class="reg__head reveal" id="reg-head">
+      <p class="eyebrow">ORBITRA7 · 10 October 2026</p>
+      <h1 class="h1">Register your team</h1>
+      <p class="reg__sub">₹250 per person · 3–5 members · Only 35 teams</p>
+    </header>
+
+    <noscript><p class="form-error">Please enable JavaScript to register.</p></noscript>
+
+    <!-- ===== Multi-step form ===== -->
+    <section class="panel glass reveal" id="form-panel" aria-label="Registration form">
+      <ol class="progress" aria-label="Registration steps">
+        <li class="progress__item is-current"><span class="progress__bar"></span><span class="progress__label">Track</span></li>
+        <li class="progress__item"><span class="progress__bar"></span><span class="progress__label">Team</span></li>
+        <li class="progress__item"><span class="progress__bar"></span><span class="progress__label">Members</span></li>
+        <li class="progress__item"><span class="progress__bar"></span><span class="progress__label">Payment</span></li>
+      </ol>
+      <p class="progress__count" id="step-count" aria-live="polite">Step 1 of 4 · Track</p>
+
+      <form id="reg-form" novalidate>
+        <!-- Step 1 — Track -->
+        <section class="step" data-step="1" aria-labelledby="s1-title">
+          <h2 class="step__title" id="s1-title" tabindex="-1">Choose your track</h2>
+          <p class="step__desc">Pick the track your team will compete in.</p>
+          <fieldset class="choices" id="track" aria-describedby="track-err">
+            <legend class="sr-only">Hackathon track</legend>
+            <label class="choice">
+              <input class="sr-only" type="radio" name="track" value="1">
+              <span class="choice__radio" aria-hidden="true"></span>
+              <span><span class="choice__num">Track 01</span><span class="choice__title">Next-Generation Mobile and Web-Based Geospatial Solutions</span></span>
+            </label>
+            <label class="choice">
+              <input class="sr-only" type="radio" name="track" value="2">
+              <span class="choice__radio" aria-hidden="true"></span>
+              <span><span class="choice__num">Track 02</span><span class="choice__title">Intelligent Geospatial Data Processing Using AI and Machine Learning</span></span>
+            </label>
+          </fieldset>
+          <p class="err" id="track-err" aria-live="polite"></p>
+        </section>
+
+        <!-- Step 2 — Team -->
+        <section class="step" data-step="2" aria-labelledby="s2-title" hidden>
+          <h2 class="step__title" id="s2-title" tabindex="-1">Your team</h2>
+          <p class="step__desc">Teams of 3 to 5 members. Fee is ₹250 per person.</p>
+          <div class="field">
+            <label class="label" for="team-size">Team Size</label>
+            <select class="select" id="team-size" name="team-size" required>
+              <option value="" selected disabled hidden>Select team size</option>
+              <option value="3">3 members</option>
+              <option value="4">4 members</option>
+              <option value="5">5 members</option>
+            </select>
+            <p class="err" id="team-size-err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label class="label" for="team-name">Team Name</label>
+            <input class="input" id="team-name" name="team-name" type="text" maxlength="40" autocomplete="off" spellcheck="false" placeholder="e.g. Orbit Breakers" required>
+            <p class="hint" id="team-name-hint">Must be unique — 2 to 40 characters.</p>
+            <p class="err" id="team-name-err" aria-live="polite"></p>
+          </div>
+          <p class="fee" id="fee" hidden><span id="fee-calc">₹250 × 3 members</span><strong id="fee-total">₹750</strong></p>
+        </section>
+
+        <!-- Step 3 — Members -->
+        <section class="step" data-step="3" aria-labelledby="s3-title" hidden>
+          <h2 class="step__title" id="s3-title" tabindex="-1">Team members</h2>
+          <p class="members-meta">
+            <span class="chip" id="members-count">3 members</span>
+            <span class="hint">Member 1 is the Team Leader.</span>
+            <button type="button" class="link-btn" id="change-size">Change team size</button>
+          </p>
+          <div class="members" id="members"></div>
+        </section>
+
+        <!-- Step 4 — Payment -->
+        <section class="step" data-step="4" aria-labelledby="s4-title" hidden>
+          <h2 class="step__title" id="s4-title" tabindex="-1">Payment</h2>
+          <p class="step__desc">Scan the QR with any UPI app and pay the exact amount for your team.</p>
+
+          <div class="pay">
+            <figure class="qr">
+              <div class="qr__card"><img id="qr-img" alt="" width="640" height="763" decoding="async"></div>
+              <figcaption class="qr__amount">Amount to pay: <strong id="pay-amount">₹750</strong></figcaption>
+            </figure>
+            <div class="pay__tools">
+              <button type="button" class="btn btn--sm" id="copy-upi"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-copy"/></svg><span data-label>Copy UPI ID</span></button>
+              <a class="btn btn--sm" id="save-qr" href="assets/img/qr-750.jpg" download><svg class="icon icon--sm" aria-hidden="true"><use href="#i-download"/></svg>Save QR</a>
+            </div>
+            <p class="hint pay__hint">On your phone? Save the QR and scan it from your gallery in any UPI app, or pay to the UPI ID. Your details on this page are kept while you pay.</p>
+          </div>
+
+          <div class="field">
+            <label class="label" for="utr">UPI Transaction ID / UTR Number</label>
+            <input class="input input--upper" id="utr" name="utr" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="35" placeholder="12-digit UTR / UPI Ref No." required>
+            <p class="hint" id="utr-hint">Find it in your UPI app's payment details — usually 12 digits.</p>
+            <p class="err" id="utr-err" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label class="label" for="shot">Payment Screenshot</label>
+            <div class="upload">
+              <label class="drop" id="drop" for="shot">
+                <input class="sr-only" type="file" id="shot" name="shot" accept="image/png,image/jpeg" required>
+                <span class="drop__empty">
+                  <svg class="icon icon--lg" aria-hidden="true"><use href="#i-upload"/></svg>
+                  <strong>Upload screenshot</strong>
+                  <small>JPG or PNG · max 5 MB</small>
+                </span>
+                <span class="drop__preview">
+                  <img id="shot-preview" alt="Preview of your payment screenshot">
+                  <span class="drop__name" id="shot-name"></span>
+                  <span class="drop__change">Tap to change</span>
+                </span>
+              </label>
+              <button type="button" class="example" id="see-example" aria-haspopup="dialog">
+                <img id="example-thumb" alt="" width="360" height="740" loading="lazy" decoding="async">
+                <span>See example</span>
+              </button>
+            </div>
+            <p class="hint" id="shot-hint">Amount, transaction ID, date/time and the "Success" status must be visible.</p>
+            <p class="err" id="shot-err" aria-live="polite"></p>
+          </div>
+        </section>
+
+        <p class="form-error" id="form-error" role="alert" hidden></p>
+
+        <div class="actions">
+          <button type="button" class="btn" id="back" hidden><svg class="icon icon--sm" aria-hidden="true"><use href="#i-back"/></svg>Back</button>
+          <button type="submit" class="btn btn--primary" id="next">
+            <span class="spinner" id="next-spinner" aria-hidden="true" hidden></span>
+            <span id="next-label">Continue</span>
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ===== Success (only after the backend confirms the save) ===== -->
+    <div class="done" id="success-wrap" hidden>
+      <section class="panel glass success" aria-labelledby="success-title">
+        <div class="success__icon"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>
+        <h1 class="h2" id="success-title" tabindex="-1">Registration Successful!</h1>
+        <dl class="summary">
+          <div><dt>Team name</dt><dd id="s-team"></dd></div>
+          <div><dt>Team ID</dt><dd id="s-id"></dd></div>
+          <div class="wide"><dt>Track</dt><dd id="s-track"></dd></div>
+          <div><dt>Team size</dt><dd id="s-size"></dd></div>
+          <div><dt>Amount paid</dt><dd id="s-amount"></dd></div>
+        </dl>
+        <p class="status-note"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span>Your payment is under verification. You'll be contacted if there is an issue.</span></p>
+      </section>
+
+      <section class="panel glass wa" aria-label="WhatsApp group">
+        <span class="wa__logo"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg></span>
+        <p>Join the official ORBITRA7 WhatsApp group for updates and problem statements</p>
+        <a class="btn btn--wa" id="wa-link" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg><span id="wa-label">Join WhatsApp Group</span>
+        </a>
+      </section>
+
+      <p class="done__links">
+        <a class="link-btn" href="index.html" data-transition>Back to home</a>
+        <button type="button" class="link-btn" id="register-another">Register another team</button>
+      </p>
+    </div>
+
+    <!-- ===== Closed ===== -->
+    <section class="panel glass closed" id="closed" hidden aria-labelledby="closed-title">
+      <span class="badge"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-lock"/></svg></span>
+      <h1 class="h2" id="closed-title">Registrations Closed</h1>
+      <p>All 35 team slots have been filled. Thank you for the overwhelming response!</p>
+      <a class="btn" href="index.html" data-transition><svg class="icon icon--sm" aria-hidden="true"><use href="#i-back"/></svg>Back to home</a>
+    </section>
+  </main>
+
+  <!-- Example screenshot (DEMO_SCREENSHOT) -->
+  <dialog class="modal" id="example-modal" aria-labelledby="ex-title">
+    <div class="modal__card glass">
+      <div class="modal__head">
+        <h2 id="ex-title">Example payment screenshot</h2>
+        <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+      </div>
+      <img class="modal__img" id="example-img" alt="Example of a correct UPI payment screenshot showing the amount, success status, date and time, and the 12-digit UPI transaction ID." width="360" height="740" decoding="async">
+      <ul class="checklist">
+        <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Amount paid</li>
+        <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>"Success" / "Completed" status</li>
+        <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Date and time</li>
+        <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>UPI transaction ID / UTR</li>
+      </ul>
+    </div>
+  </dialog>
+</body>
+</html>

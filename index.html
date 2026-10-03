@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ORBITRA7 · 7-Hour Geospatial Hackathon</title>
+  <meta name="description" content="ORBITRA7 — a 7-hour geospatial hackathon on Earth observation and satellite imagery, presented by ACM SIG SPATIAL. 10 October 2026 · AI Seminar Hall, Dutt Block, SAHE. Only 35 teams.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="ORBITRA7 · 7-Hour Geospatial Hackathon">
+  <meta property="og:description" content="Earth Observation · Satellite Imagery. 10 October 2026. Only 35 teams — secure your spot.">
+  <meta property="og:image" content="assets/img/bg-home.webp">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23000'/%3E%3Cellipse cx='16' cy='16' rx='12' ry='5' fill='none' stroke='%239fd4ff' stroke-width='1.6' transform='rotate(-25 16 16)'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23fff'/%3E%3C/svg%3E">
+
+  <script>document.documentElement.classList.add('js')</script>
+
+  <!-- BG_HOME: preload the right size so the hero paints fast -->
+  <link rel="preload" as="image" type="image/avif" href="assets/img/bg-home.avif" media="(min-aspect-ratio: 9/10)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif" href="assets/img/bg-home-m.avif" media="(max-aspect-ratio: 9/10)" fetchpriority="high">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500..800&family=Inter:wght@300..700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500..800&family=Inter:wght@300..700&display=swap"></noscript>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="prefetch" href="register.html">
+
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/common.js" defer></script>
+  <script src="assets/js/home.js" defer></script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="17" rx="3"/><path d="M16 2.5v4M8 2.5v4M3 10h18"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 6.5V12l3.5 2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-rupee" viewBox="0 0 24 24"><path d="M6 3h12M6 8h12M6 13l8.5 8M6 13h3M9 13c6.67 0 6.67-10 0-10"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="M14.1 5.55a2 2 0 0 0 1.8 0l3.65-1.83A1 1 0 0 1 21 4.62v12.76a1 1 0 0 1-.55.9l-4.55 2.27a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.65 1.83A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9L8.1 3.45a2 2 0 0 1 1.8 0z"/><path d="M15 5.76v15M9 3.24v15"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2.5"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+    <symbol id="i-medal" viewBox="0 0 24 24"><path d="M7.2 2h9.6L14 8.5h-4z"/><path d="M8 2l3 6.5M16 2l-3 6.5"/><circle cx="12" cy="15" r="6"/><path d="M12 12.5v5"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3.5" y="11" width="17" height="11" rx="2.5"/><path d="M7.5 11V7a4.5 4.5 0 0 1 9 0v4"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  </svg>
+
+  <!-- Background: BG_HOME with Ken Burns + parallax, comets on a canvas above it -->
+  <div class="bg bg--home" aria-hidden="true">
+    <div class="bg__move" id="bg-move">
+      <picture>
+        <source type="image/avif" media="(max-aspect-ratio: 9/10)" srcset="assets/img/bg-home-m.avif">
+        <source type="image/webp" media="(max-aspect-ratio: 9/10)" srcset="assets/img/bg-home-m.webp">
+        <source type="image/avif" srcset="assets/img/bg-home.avif">
+        <img class="bg__img" src="assets/img/bg-home.webp" alt="" width="1920" height="1076" fetchpriority="high" decoding="async" onload="this.classList.add('is-loaded')">
+      </picture>
+    </div>
+    <div class="bg__shade"></div>
+    <div class="bg__dim" id="bg-dim"></div>
+  </div>
+  <canvas class="fx" id="comets" aria-hidden="true"></canvas>
+
+  <!-- Floating glass navbar -->
+  <header class="nav" id="nav">
+    <nav class="nav__inner glass" aria-label="Main">
+      <a class="nav__brand" href="#top" aria-label="ORBITRA7 — back to top">
+        <img class="brand-logo" src="assets/img/acm-sigspatial.webp" alt="ACM SIGSPATIAL" width="400" height="166" decoding="async" fetchpriority="high">
+        <span class="nav__divider" aria-hidden="true"></span>
+        <span class="nav__word">ORBITRA7</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#tracks">Tracks</a></li>
+        <li><a href="#details">Details</a></li>
+        <li><a href="#timeline">Schedule</a></li>
+        <li><a href="#prizes">Prizes</a></li>
+      </ul>
+      <a class="btn btn--primary btn--sm" href="register.html" data-register data-transition data-closed-label="Closed"><span data-label>Register</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="hero__inner">
+        <p class="eyebrow reveal">ACM SIG SPATIAL presents</p>
+        <h1 class="title reveal" style="--d:.08s">ORBITRA7</h1>
+        <p class="hero__sub reveal" style="--d:.16s">A 7-Hour Hackathon for Next-Gen Innovators</p>
+        <p class="tag reveal" style="--d:.22s"><span class="chip">Earth Observation · Satellite Imagery</span></p>
+
+        <div class="hero__actions reveal" style="--d:.3s">
+          <a class="btn btn--primary btn--lg" href="register.html" data-register data-transition data-closed-label="Registrations Closed">
+            <span data-label>Register Now</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="btn btn--lg" href="#details">Event details</a>
+        </div>
+
+        <div class="countdown-wrap reveal" style="--d:.38s">
+          <p class="countdown-cap" id="countdown-cap">Starts 10 Oct 2026 · 9:00 AM IST</p>
+          <div class="countdown glass" id="countdown" role="timer" aria-label="Countdown to ORBITRA7, 10 October 2026, 9:00 AM IST">
+            <div class="cd__cell"><span class="cd__num" data-unit="d">00</span><span class="cd__label">Days</span></div>
+            <span class="cd__sep" aria-hidden="true">:</span>
+            <div class="cd__cell"><span class="cd__num" data-unit="h">00</span><span class="cd__label">Hours</span></div>
+            <span class="cd__sep" aria-hidden="true">:</span>
+            <div class="cd__cell"><span class="cd__num" data-unit="m">00</span><span class="cd__label">Minutes</span></div>
+            <span class="cd__sep" aria-hidden="true">:</span>
+            <div class="cd__cell"><span class="cd__num" data-unit="s">00</span><span class="cd__label">Seconds</span></div>
+          </div>
+          <p class="cd__live glass" id="countdown-live" role="status" hidden><span class="pulse" aria-hidden="true"></span><span data-label>Hackathon is Live!</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seats -->
+    <section class="section--tight" aria-labelledby="seats-title">
+      <div class="wrap wrap--narrow">
+        <div class="seats glass reveal" id="seats" data-sheen>
+          <div class="seats__top">
+            <p class="seats__title" id="seats-title"><strong id="seats-count">–</strong> / <span id="seats-max">35</span> Teams Registered</p>
+            <p class="seats__status" id="seats-status" aria-live="polite">Checking seats…</p>
+          </div>
+          <div class="bar" id="seats-bar" role="progressbar" aria-labelledby="seats-title" aria-valuemin="0" aria-valuemax="35" aria-valuenow="0">
+            <span class="bar__fill" id="seats-fill"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tracks -->
+    <section class="section" id="tracks" aria-labelledby="tracks-title">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Choose your mission</p>
+          <h2 class="h2" id="tracks-title">Hackathon Tracks</h2>
+        </header>
+        <div class="tracks">
+          <a class="track glass lift reveal" href="register.html?track=1" data-register data-transition data-sheen>
+            <div class="track__top">
+              <span class="track__num">Track 01</span>
+              <span class="track__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-map"/></svg></span>
+            </div>
+            <h3 class="track__title">Next-Generation Mobile and Web-Based Geospatial Solutions</h3>
+            <p class="track__desc">Build apps and platforms that put maps, location and satellite data in people's hands.</p>
+            <span class="track__cta"><span data-label>Register for Track 01</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="track glass lift reveal" style="--d:.08s" href="register.html?track=2" data-register data-transition data-sheen>
+            <div class="track__top">
+              <span class="track__num">Track 02</span>
+              <span class="track__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-cpu"/></svg></span>
+            </div>
+            <h3 class="track__title">Intelligent Geospatial Data Processing Using AI and Machine Learning</h3>
+            <p class="track__desc">Turn raw Earth-observation data and satellite imagery into insight with AI and ML models.</p>
+            <span class="track__cta"><span data-label>Register for Track 02</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notice -->
+    <section class="section--tight" aria-label="Notice">
+      <div class="wrap wrap--narrow">
+        <div class="notice glass reveal" role="note">
+          <span class="notice__emoji" aria-hidden="true">📢</span>
+          <p>Problem statements will be released on <strong>9th October 2026</strong> (one day before the hackathon).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event details -->
+    <section class="section" id="details" aria-labelledby="details-title">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Mission brief</p>
+          <h2 class="h2" id="details-title">Event Details</h2>
+        </header>
+        <div class="details glass reveal" data-sheen>
+          <div class="detail">
+            <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+            <div><p class="detail__label">Date</p><p class="detail__value">10 October 2026</p><p class="detail__sub">Saturday</p></div>
+          </div>
+          <div class="detail">
+            <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+            <div><p class="detail__label">Begins at</p><p class="detail__value">9:00 AM</p><p class="detail__sub">IST</p></div>
+          </div>
+          <div class="detail">
+            <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+            <div><p class="detail__label">Venue</p><p class="detail__value">AI Seminar Hall</p><p class="detail__sub">Dutt Block, SAHE</p></div>
+          </div>
+          <div class="detail">
+            <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+            <div><p class="detail__label">Team size</p><p class="detail__value">3–5 members</p><p class="detail__sub">Member 1 is the Team Leader</p></div>
+          </div>
+          <div class="detail">
+            <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-rupee"/></svg></span>
+            <div><p class="detail__label">Registration fee</p><p class="detail__value">₹250 per person</p><p class="detail__sub">₹750 for 3 · ₹1000 for 4 · ₹1250 for 5</p></div>
+          </div>
+          <div class="detail">
+            <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-flag"/></svg></span>
+            <div><p class="detail__label">Seats</p><p class="detail__value">Only 35 teams</p><p class="detail__sub">First come, first served</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section" id="timeline" aria-labelledby="timeline-title">
+      <div class="wrap wrap--narrow">
+        <header class="section__head reveal">
+          <p class="eyebrow">10 October 2026</p>
+          <h2 class="h2" id="timeline-title">Event Day Timeline</h2>
+        </header>
+        <ol class="tl glass reveal">
+          <li class="tl__item" data-start="2026-10-10T09:00:00+05:30" data-end="2026-10-10T10:00:00+05:30">
+            <span class="tl__dot"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+            <div>
+              <p class="tl__time">9:00 – 10:00 AM</p>
+              <h3 class="tl__title">Inauguration <span class="chip chip--live"><span class="pulse" aria-hidden="true"></span>Live now</span></h3>
+              <p class="tl__meta">1 hour</p>
+            </div>
+          </li>
+          <li class="tl__item" data-start="2026-10-10T10:00:00+05:30" data-end="2026-10-10T17:00:00+05:30">
+            <span class="tl__dot"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+            <div>
+              <p class="tl__time">10:00 AM – 5:00 PM</p>
+              <h3 class="tl__title">Hackathon <span class="chip chip--live"><span class="pulse" aria-hidden="true"></span>Live now</span></h3>
+              <p class="tl__meta">7 hours</p>
+            </div>
+          </li>
+          <li class="tl__item" data-start="2026-10-10T17:00:00+05:30" data-end="2026-10-10T18:00:00+05:30">
+            <span class="tl__dot"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+            <div>
+              <p class="tl__time">5:00 – 6:00 PM</p>
+              <h3 class="tl__title">Closing &amp; Evaluation Round <span class="chip chip--live"><span class="pulse" aria-hidden="true"></span>Live now</span></h3>
+              <p class="tl__meta">1 hour</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Prizes -->
+    <section class="section" id="prizes" aria-labelledby="prizes-title">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Rewards</p>
+          <h2 class="h2" id="prizes-title">Prizes</h2>
+        </header>
+        <div class="prizes">
+          <article class="prize prize--gold glass lift reveal" data-sheen>
+            <span class="prize__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-trophy"/></svg></span>
+            <p class="prize__rank">1st Place</p>
+            <p class="prize__amt">₹5,000</p>
+            <p class="prize__label">Winner</p>
+          </article>
+          <article class="prize prize--silver glass lift reveal" style="--d:.08s" data-sheen>
+            <span class="prize__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-medal"/></svg></span>
+            <p class="prize__rank">2nd Place</p>
+            <p class="prize__amt">₹3,000</p>
+            <p class="prize__label">Runner-up</p>
+          </article>
+          <article class="prize prize--bronze glass lift reveal" style="--d:.16s" data-sheen>
+            <span class="prize__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-medal"/></svg></span>
+            <p class="prize__rank">3rd Place</p>
+            <p class="prize__amt">₹2,000</p>
+            <p class="prize__label">Second runner-up</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eligibility -->
+    <section class="section" id="eligibility" aria-labelledby="elig-title">
+      <div class="wrap wrap--narrow">
+        <header class="section__head reveal">
+          <p class="eyebrow">Who can join</p>
+          <h2 class="h2" id="elig-title">Eligibility</h2>
+        </header>
+        <div class="elig glass reveal" data-sheen>
+          <div class="elig__row">
+            <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg></span>
+            <div>
+              <h3 class="h3">Open to AI department students only</h3>
+              <p>1st and 2nd year students from AIML, AIDS and IT.</p>
+              <div class="chips"><span class="chip">AIML</span><span class="chip">AIDS</span><span class="chip">IT</span></div>
+            </div>
+          </div>
+          <div class="elig__row">
+            <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg></span>
+            <div>
+              <h3 class="h3">3rd and 4th year students</h3>
+              <p>IT branch only.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section" aria-labelledby="cta-title">
+      <div class="wrap wrap--narrow">
+        <div class="cta glass reveal" data-sheen>
+          <h2 class="h2" id="cta-title">Only 35 teams.<br>Secure your spot.</h2>
+          <p id="cta-left">Registration takes about 5 minutes.</p>
+          <a class="btn btn--primary btn--lg" href="register.html" data-register data-transition data-closed-label="Registrations Closed">
+            <span data-label>Register Now</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <img class="brand-logo brand-logo--lg" src="assets/img/acm-sigspatial.webp" alt="ACM SIGSPATIAL" width="400" height="166" decoding="async" loading="lazy">
+          <p class="footer__name">ACM SIG SPATIAL</p>
+          <!-- COLLEGE NAME: replace with the full college name -->
+          <p>SAHE</p>
+        </div>
+        <div>
+          <p class="eyebrow">Contact</p>
+          <ul class="footer__contact">
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-phone"/></svg><span>Parna Sri Choudary · <a href="tel:+917780193618">+91 77801 93618</a></span></li>
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-phone"/></svg><span>Ipsitha Pinisetti · <a href="tel:+919676583697">+91 96765 83697</a></span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__copy">© 2026 ORBITRA7 · Presented by ACM SIG SPATIAL</p>
+    </div>
+  </footer>
+</body>
+</html>
