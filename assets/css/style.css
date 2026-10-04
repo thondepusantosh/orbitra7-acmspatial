@@ -111,7 +111,7 @@ h1, h2, h3 {
 .js .bg__img.is-loaded { opacity: 1; }
 
 .bg--home .bg__img {
-  object-position: 50% 50%;
+  object-position: 68% 50%;
   animation: kenburns 36s ease-in-out infinite alternate;
 }
 @media (max-aspect-ratio: 9/10) { .bg--home .bg__img { object-position: 50% 50%; } }
@@ -142,6 +142,20 @@ h1, h2, h3 {
     rgba(0, 0, 0, .18) 62%,
     rgba(0, 0, 0, .62) 100%);
 }
+/* soft shadow just behind the hero text, so it stays readable over the bright spacecraft */
+.bg--home .bg__shade {
+  background:
+    radial-gradient(ellipse 46% 34% at 50% 40%, rgba(0, 0, 0, .42), rgba(0, 0, 0, .18) 60%, transparent 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, .58) 0%, rgba(0, 0, 0, .12) 32%, rgba(0, 0, 0, .18) 62%, rgba(0, 0, 0, .62) 100%);
+}
+@media (max-aspect-ratio: 9/10) {
+  .bg--home .bg__shade {
+    background:
+      radial-gradient(ellipse 80% 30% at 50% 40%, rgba(0, 0, 0, .48), rgba(0, 0, 0, .2) 60%, transparent 100%),
+      linear-gradient(180deg, rgba(0, 0, 0, .58) 0%, rgba(0, 0, 0, .12) 32%, rgba(0, 0, 0, .18) 62%, rgba(0, 0, 0, .62) 100%);
+  }
+}
+.title { filter: drop-shadow(0 6px 34px rgba(159, 212, 255, .22)) drop-shadow(0 2px 10px rgba(0, 0, 0, .55)); }
 .bg--register .bg__shade {
   background: linear-gradient(180deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .06) 28%, rgba(0, 0, 0, .1) 68%, rgba(0, 0, 0, .55) 100%);
 }
@@ -397,9 +411,8 @@ h1, h2, h3 {
   min-height: 100vh;
   min-height: 100svh;
   display: grid;
-  place-items: start center;
-  /* leave the top of the screen clear so the rocket and its flame show above the title */
-  padding: calc(clamp(250px, 37svh, 400px) + env(safe-area-inset-top, 0px)) var(--gutter) 56px;
+  place-items: center;
+  padding: calc(104px + env(safe-area-inset-top, 0px)) var(--gutter) 56px;
   text-align: center;
 }
 .hero__inner { display: grid; justify-items: center; width: 100%; max-width: 980px; }
