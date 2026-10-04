@@ -22,12 +22,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500..800&family=Inter:wght@300..700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500..800&family=Inter:wght@300..700&display=swap"></noscript>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=2026-10-04c">
+  <link rel="stylesheet" href="assets/css/style.css?v=2026-10-04d">
   <link rel="prefetch" href="register.html">
 
-  <script src="assets/js/config.js?v=2026-10-04c" defer></script>
-  <script src="assets/js/common.js?v=2026-10-04c" defer></script>
-  <script src="assets/js/home.js?v=2026-10-04c" defer></script>
+  <script src="assets/js/config.js?v=2026-10-04d" defer></script>
+  <script src="assets/js/common.js?v=2026-10-04d" defer></script>
+  <script src="assets/js/home.js?v=2026-10-04d" defer></script>
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -45,6 +45,8 @@
     <symbol id="i-medal" viewBox="0 0 24 24"><path d="M7.2 2h9.6L14 8.5h-4z"/><path d="M8 2l3 6.5M16 2l-3 6.5"/><circle cx="12" cy="15" r="6"/><path d="M12 12.5v5"/></symbol>
     <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
     <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2.5H6.5a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V8z"/><path d="M14 2.5V8h5.5M8.5 13h7M8.5 17h5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
     <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3.5" y="11" width="17" height="11" rx="2.5"/><path d="M7.5 11V7a4.5 4.5 0 0 1 9 0v4"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
   </svg>
@@ -74,6 +76,7 @@
       </a>
       <ul class="nav__links">
         <li><a href="#tracks">Tracks</a></li>
+        <li><a href="#problems">Problems</a></li>
         <li><a href="#details">Details</a></li>
         <li><a href="#timeline">Schedule</a></li>
         <li><a href="#prizes">Prizes</a></li>
@@ -165,12 +168,48 @@
       </div>
     </section>
 
-    <!-- Notice -->
-    <section class="section--tight" aria-label="Notice">
-      <div class="wrap wrap--narrow">
-        <div class="notice glass reveal" role="note">
-          <span class="notice__emoji" aria-hidden="true">📢</span>
-          <p>Problem statements will be released on <strong>9th October 2026</strong> (one day before the hackathon).</p>
+    <!-- Problem statements -->
+    <section class="section" id="problems" aria-labelledby="ps-title">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Your mission brief</p>
+          <h2 class="h2" id="ps-title">Problem Statements</h2>
+          <p class="section__lead">The problem statements for both tracks will be released right here on <strong>9th October 2026</strong>, one day before the hackathon. Download yours, go through it with your team and arrive ready to build.</p>
+        </header>
+        <div class="ps glass reveal" data-sheen>
+          <div class="ps__status" id="ps-status" role="status">
+            <span class="ps__status-icon" aria-hidden="true">📢</span>
+            <div>
+              <p class="ps__status-title" id="ps-status-title">Releasing on 9th October 2026</p>
+              <p class="ps__status-sub" id="ps-status-sub">The download buttons below unlock here automatically.</p>
+            </div>
+            <span class="chip ps__countdown" id="ps-countdown" hidden></span>
+          </div>
+          <div class="ps__grid">
+          <article class="ps__card" data-ps-track="1">
+            <div class="ps__card-top">
+              <span class="ps__file"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-file"/></svg></span>
+              <span class="track__num">Track 01</span>
+            </div>
+            <h3 class="ps__title">Next-Generation Mobile and Web-Based Geospatial Solutions</h3>
+            <p class="ps__meta" data-ps-meta>Problem statement · PDF</p>
+            <span class="btn ps__btn is-locked" data-ps-btn aria-disabled="true"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-lock"/></svg><span data-label>Unlocks on 9 Oct</span></span>
+          </article>
+          <article class="ps__card" data-ps-track="2">
+            <div class="ps__card-top">
+              <span class="ps__file"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-file"/></svg></span>
+              <span class="track__num">Track 02</span>
+            </div>
+            <h3 class="ps__title">Intelligent Geospatial Data Processing Using AI and Machine Learning</h3>
+            <p class="ps__meta" data-ps-meta>Problem statement · PDF</p>
+            <span class="btn ps__btn is-locked" data-ps-btn aria-disabled="true"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-lock"/></svg><span data-label>Unlocks on 9 Oct</span></span>
+          </article>
+          </div>
+          <ul class="ps__notes">
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-calendar"/></svg><span>Released on <strong>9 October</strong>, one day before the event, and open to everyone on this page.</span></li>
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-file"/></svg><span>Download the problem statement for the track you registered for and read it with your team.</span></li>
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-clock"/></svg><span>Come prepared: the 7-hour build starts at <strong>10:00 AM</strong> on 10 October.</span></li>
+          </ul>
         </div>
       </div>
     </section>
@@ -340,7 +379,7 @@
           </details>
           <details class="faq__item">
             <summary class="faq__q"><span>When will the problem statements be released?</span><svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-            <p class="faq__a">Problem statements will be revealed on 9th October 2026, one day before the event, and will be publicly accessible right here on this website. Registered teams will also be notified in the official WhatsApp group.</p>
+            <p class="faq__a">Problem statements will be revealed on 9th October 2026, one day before the event, and will be publicly accessible right here on this website in the <a href="#problems">Problem Statements</a> section. Registered teams will also be notified in the official WhatsApp group.</p>
           </details>
         </div>
         <p class="faq__more reveal">Still have a question? <a href="#contact">Contact the coordinators</a></p>
