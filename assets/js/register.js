@@ -18,7 +18,7 @@
   const YEARS = ['First', 'Second', 'Third', 'Fourth'];
   const BRANCHES = ['AIML', 'AIDS', 'IT'];
   const IT_ONLY_YEARS = ['Third', 'Fourth'];
-  const MEMBER_FIELDS = ['name', 'roll', 'year', 'branch', 'phone', 'email'];
+  const MEMBER_FIELDS = ['name', 'roll', 'year', 'branch', 'section', 'phone', 'email'];
   const STEP_NAMES = ['Track', 'Team', 'Members', 'Payment'];
   const MAX_SHOT_BYTES = 5 * 1024 * 1024;
   const DRAFT_KEY = 'orbitra7:draft';
@@ -32,6 +32,7 @@
     phone: /^[6-9]\d{9}$/,
     gmail: /^[a-z0-9][a-z0-9._+-]{0,63}@gmail\.com$/,
     utr: /^[A-Z0-9]{10,35}$/,
+    section: /^[A-Z0-9][A-Z0-9 -]{0,9}$/,
   };
 
   const store = {
@@ -73,6 +74,7 @@
           ${field(`${p}-year`, 'Year of Study', `<select class="select" id="${p}-year" required>${options(YEARS, 'Select year')}</select>`)}
           ${field(`${p}-branch`, 'Branch', `<select class="select" id="${p}-branch" required>${options(BRANCHES, 'Select branch')}</select>`,
             `<p class="hint hint--lock" id="${p}-branch-hint" hidden><svg class="icon icon--sm" aria-hidden="true"><use href="#i-lock"/></svg>Only IT branch for 3rd &amp; 4th years.</p>`)}
+          ${field(`${p}-section`, 'Class Section', `<input class="input input--upper" id="${p}-section" type="text" maxlength="10" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="e.g. A" required>`)}
           ${field(`${p}-phone`, 'Phone Number', `<input class="input" id="${p}-phone" type="tel" inputmode="numeric" autocomplete="${lead ? 'tel-national' : 'off'}" placeholder="10-digit mobile number" required>`)}
           ${field(`${p}-email`, 'Gmail Address', `<input class="input" id="${p}-email" type="email" inputmode="email" maxlength="80" autocomplete="${lead ? 'email' : 'off'}" autocapitalize="off" spellcheck="false" placeholder="name@gmail.com" required>`)}
         </div>
@@ -101,6 +103,7 @@
     branch: byId(`m${n}-branch`).value,
     phone: raw(`m${n}-phone`).replace(/\D/g, ''),
     email: raw(`m${n}-email`).toLowerCase(),
+    section: raw(`m${n}-section`).toUpperCase().replace(/\s+/g, ' '),
   });
 
   const collect = () => {
@@ -142,6 +145,7 @@
       case 'branch':
         if (!v) return 'Select branch.';
         return IT_ONLY_YEARS.includes(mem.year) && v !== 'IT' ? 'Only IT branch for 3rd & 4th years.' : '';
+      case 'section': return !v ? 'Enter class section.' : RE.section.test(v) ? '' : 'Enter a valid section, e.g. A or B.';
       case 'phone': return !v ? 'Enter phone number.' : RE.phone.test(v) ? '' : 'Enter a valid 10-digit mobile number starting with 6, 7, 8 or 9.';
       case 'email': return !v ? 'Enter Gmail address.' : RE.gmail.test(v) ? '' : 'Enter a valid Gmail address ending with @gmail.com.';
     }
@@ -439,7 +443,7 @@
     const paid = ' You don’t need to pay again — fix this and submit.';
     switch (res.field) {
       case 'closed':
-        showClosed();
+        showClosed(msg);
         return;
       case 'teamName':
         goTo(2, -1);
@@ -508,7 +512,8 @@
     byId('success-title').focus({ preventScroll: true });
   }
 
-  function showClosed() {
+  function showClosed(message) {
+    if (message) byId('closed-msg').textContent = message;
     panel.hidden = true;
     byId('reg-head').hidden = true;
     byId('closed').hidden = false;
