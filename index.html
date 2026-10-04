@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>ORBITRA7 · 7-Hour Geospatial Hackathon</title>
-  <meta name="description" content="ORBITRA7 — a 7-hour geospatial hackathon on Earth observation and satellite imagery, presented by ACM SIG SPATIAL. 10 October 2026 · AI Seminar Hall, Dutt Block, SAHE. Only 35 teams.">
+  <meta name="description" content="ORBITRA7 — a 7-hour hackathon on geospatial technology and AI &amp; machine learning, presented by ACM SIG SPATIAL. 10 October 2026 · AI Seminar Hall, Dutt Block, SAHE. Only 35 teams.">
   <meta name="theme-color" content="#000000">
   <meta property="og:title" content="ORBITRA7 · 7-Hour Geospatial Hackathon">
-  <meta property="og:description" content="Earth Observation · Satellite Imagery. 10 October 2026. Only 35 teams — secure your spot.">
-  <meta property="og:image" content="assets/img/bg-home.webp">
+  <meta property="og:description" content="Geospatial Technology · AI &amp; Machine Learning. 10 October 2026. Only 35 teams — secure your spot.">
+  <meta property="og:image" content="assets/img/bg-launch.webp">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23000'/%3E%3Cellipse cx='16' cy='16' rx='12' ry='5' fill='none' stroke='%239fd4ff' stroke-width='1.6' transform='rotate(-25 16 16)'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23fff'/%3E%3C/svg%3E">
 
   <script>document.documentElement.classList.add('js')</script>
 
   <!-- BG_HOME: preload the right size so the hero paints fast -->
-  <link rel="preload" as="image" type="image/avif" href="assets/img/bg-home.avif" media="(min-aspect-ratio: 9/10)" fetchpriority="high">
-  <link rel="preload" as="image" type="image/avif" href="assets/img/bg-home-m.avif" media="(max-aspect-ratio: 9/10)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif" href="assets/img/bg-launch.avif" media="(min-aspect-ratio: 9/10)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif" href="assets/img/bg-launch-m.avif" media="(max-aspect-ratio: 9/10)" fetchpriority="high">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,18 +43,19 @@
     <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
     <symbol id="i-medal" viewBox="0 0 24 24"><path d="M7.2 2h9.6L14 8.5h-4z"/><path d="M8 2l3 6.5M16 2l-3 6.5"/><circle cx="12" cy="15" r="6"/><path d="M12 12.5v5"/></symbol>
     <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
     <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3.5" y="11" width="17" height="11" rx="2.5"/><path d="M7.5 11V7a4.5 4.5 0 0 1 9 0v4"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
   </svg>
 
-  <!-- Background: BG_HOME with Ken Burns + parallax, comets on a canvas above it -->
+  <!-- Background: BG_HOME (rocket launch) with Ken Burns + parallax, comets on a canvas above it -->
   <div class="bg bg--home" aria-hidden="true">
     <div class="bg__move" id="bg-move">
       <picture>
-        <source type="image/avif" media="(max-aspect-ratio: 9/10)" srcset="assets/img/bg-home-m.avif">
-        <source type="image/webp" media="(max-aspect-ratio: 9/10)" srcset="assets/img/bg-home-m.webp">
-        <source type="image/avif" srcset="assets/img/bg-home.avif">
-        <img class="bg__img" src="assets/img/bg-home.webp" alt="" width="1920" height="1076" fetchpriority="high" decoding="async" onload="this.classList.add('is-loaded')">
+        <source type="image/avif" media="(max-aspect-ratio: 9/10)" srcset="assets/img/bg-launch-m.avif">
+        <source type="image/webp" media="(max-aspect-ratio: 9/10)" srcset="assets/img/bg-launch-m.webp">
+        <source type="image/avif" srcset="assets/img/bg-launch.avif">
+        <img class="bg__img" src="assets/img/bg-launch.webp" alt="" width="1920" height="1080" fetchpriority="high" decoding="async" onload="this.classList.add('is-loaded')">
       </picture>
     </div>
     <div class="bg__shade"></div>
@@ -66,7 +67,7 @@
   <header class="nav" id="nav">
     <nav class="nav__inner glass" aria-label="Main">
       <a class="nav__brand" href="#top" aria-label="ORBITRA7 — back to top">
-        <img class="brand-logo" src="assets/img/acm-sigspatial.webp" alt="ACM SIGSPATIAL" width="400" height="166" decoding="async" fetchpriority="high">
+        <img class="brand-logo" src="assets/img/vrs-acm-sigspatial.webp" alt="VRS ACM SIGSPATIAL Student Chapter" width="456" height="226" decoding="async">
         <span class="nav__divider" aria-hidden="true"></span>
         <span class="nav__word">ORBITRA7</span>
       </a>
@@ -75,8 +76,13 @@
         <li><a href="#details">Details</a></li>
         <li><a href="#timeline">Schedule</a></li>
         <li><a href="#prizes">Prizes</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <a class="btn btn--primary btn--sm" href="register.html" data-register data-transition data-closed-label="Closed"><span data-label>Register</span></a>
+      <div class="nav__actions">
+        <a class="nav__call" href="#contact" aria-label="Contact us" title="Contact us"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></a>
+        <a class="btn btn--primary btn--sm" href="register.html" data-register data-transition data-closed-label="Closed"><span data-label>Register</span></a>
+      </div>
     </nav>
   </header>
 
@@ -87,7 +93,7 @@
         <p class="eyebrow reveal">ACM SIG SPATIAL presents</p>
         <h1 class="title reveal" style="--d:.08s">ORBITRA7</h1>
         <p class="hero__sub reveal" style="--d:.16s">A 7-Hour Hackathon for Next-Gen Innovators</p>
-        <p class="tag reveal" style="--d:.22s"><span class="chip">Earth Observation · Satellite Imagery</span></p>
+        <p class="tag reveal" style="--d:.22s"><span class="chip"><span class="nowrap">Geospatial Technology ·</span> <span class="nowrap">AI &amp; Machine Learning</span></span></p>
 
         <div class="hero__actions reveal" style="--d:.3s">
           <a class="btn btn--primary btn--lg" href="register.html" data-register data-transition data-closed-label="Registrations Closed">
@@ -297,6 +303,35 @@
       </div>
     </section>
 
+    <!-- FAQs -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap wrap--narrow">
+        <header class="section__head reveal">
+          <p class="eyebrow">Good to know</p>
+          <h2 class="h2" id="faq-title">FAQs</h2>
+        </header>
+        <div class="faq glass reveal" data-sheen>
+          <details class="faq__item" open>
+            <summary class="faq__q"><span>Will lunch be provided?</span><svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p class="faq__a">Yes. Lunch is provided for every registered participant on the event day.</p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q"><span>Is transport arranged for participants?</span><svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p class="faq__a">No. Participants need to manage their own travel to and from the venue — the AI Seminar Hall, Dutt Block, SAHE. Plan to arrive before 9:00 AM so you don't miss the inauguration.</p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q"><span>Can our team have members from different departments?</span><svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p class="faq__a">No, cross-department teams are not allowed. Every member must be from the eligible AI department branches — AIML, AIDS or IT (3rd and 4th year students: IT only). Teams with members from any other department will not be accepted.</p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q"><span>When will the problem statements be released?</span><svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p class="faq__a">Problem statements will be revealed on 9th October 2026, one day before the event, and will be publicly accessible right here on this website. Registered teams will also be notified in the official WhatsApp group.</p>
+          </details>
+        </div>
+        <p class="faq__more reveal">Still have a question? <a href="#contact">Contact the coordinators</a></p>
+      </div>
+    </section>
+
     <!-- Final CTA -->
     <section class="section" aria-labelledby="cta-title">
       <div class="wrap wrap--narrow">
@@ -316,16 +351,21 @@
     <div class="wrap">
       <div class="footer__grid">
         <div>
-          <img class="brand-logo brand-logo--lg" src="assets/img/acm-sigspatial.webp" alt="ACM SIGSPATIAL" width="400" height="166" decoding="async" loading="lazy">
+          <img class="brand-logo brand-logo--lg" src="assets/img/vrs-acm-sigspatial.webp" alt="VRS ACM SIGSPATIAL Student Chapter" width="456" height="226" decoding="async" loading="lazy">
           <p class="footer__name">ACM SIG SPATIAL</p>
           <!-- COLLEGE NAME: replace with the full college name -->
           <p>SAHE</p>
         </div>
-        <div>
-          <p class="eyebrow">Contact</p>
+        <div id="contact" class="footer__contacts">
+          <p class="eyebrow">Faculty Co-ordinator</p>
           <ul class="footer__contact">
-            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-phone"/></svg><span>Parna Sri Choudary · <a href="tel:+917780193618">+91 77801 93618</a></span></li>
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-phone"/></svg><span>G. Geetha · <a href="tel:+919885127581">+91 98851 27581</a></span></li>
+          </ul>
+          <p class="eyebrow footer__label">Contact</p>
+          <ul class="footer__contact">
             <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-phone"/></svg><span>Ipsitha Pinisetti · <a href="tel:+919676583697">+91 96765 83697</a></span></li>
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-phone"/></svg><span>Sherley · <a href="tel:+917382166323">+91 73821 66323</a></span></li>
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-phone"/></svg><span>Sai Eswar · <a href="tel:+917801027272">+91 78010 27272</a></span></li>
           </ul>
         </div>
       </div>

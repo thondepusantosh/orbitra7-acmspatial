@@ -28,6 +28,7 @@
 <body class="page-register">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-map" viewBox="0 0 24 24"><path d="M14.1 5.55a2 2 0 0 0 1.8 0l3.65-1.83A1 1 0 0 1 21 4.62v12.76a1 1 0 0 1-.55.9l-4.55 2.27a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.65 1.83A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9L8.1 3.45a2 2 0 0 1 1.8 0z"/><path d="M15 5.76v15M9 3.24v15"/></symbol>
     <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2.5"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
@@ -62,7 +63,10 @@
         <svg class="icon" aria-hidden="true"><use href="#i-back"/></svg>
         <span class="nav__word">ORBITRA7</span>
       </a>
-      <img class="brand-logo" src="assets/img/acm-sigspatial.webp" alt="ACM SIGSPATIAL" width="400" height="166" decoding="async">
+      <div class="nav__actions">
+        <a class="nav__call nav__call--text" href="index.html#contact" data-transition aria-label="Contact us"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>Contact</span></a>
+        <img class="brand-logo" src="assets/img/vrs-acm-sigspatial.webp" alt="VRS ACM SIGSPATIAL Student Chapter" width="456" height="226" decoding="async">
+      </div>
     </nav>
   </header>
 
