@@ -111,10 +111,10 @@ h1, h2, h3 {
 .js .bg__img.is-loaded { opacity: 1; }
 
 .bg--home .bg__img {
-  object-position: 30% 50%;
+  object-position: 50% 50%;
   animation: kenburns 36s ease-in-out infinite alternate;
 }
-@media (max-aspect-ratio: 9/10) { .bg--home .bg__img { object-position: 35% 50%; } }
+@media (max-aspect-ratio: 9/10) { .bg--home .bg__img { object-position: 50% 50%; } }
 
 /* black hole: no parallax here, so no oversized layer — keeps the image at its sharpest */
 .bg--register .bg__move { inset: 0; }
@@ -333,13 +333,28 @@ h1, h2, h3 {
 .nav__back { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; text-decoration: none; color: #fff; font-weight: 600; font-size: .92rem; }
 .nav__back:hover { background: rgba(255, 255, 255, .08); }
 
-@media (min-width: 860px) { .nav__links { display: flex; } }
+.nav__actions { display: flex; align-items: center; gap: 8px; }
+.nav__call {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  min-width: 40px; height: 40px; padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, .22);
+  background: rgba(255, 255, 255, .08);
+  color: #fff; text-decoration: none; font-size: .88rem; font-weight: 600;
+  transition: background-color .3s var(--ease), transform .3s var(--ease);
+}
+.nav__call:hover { background: rgba(255, 255, 255, .16); }
+.nav__call:active { transform: scale(.95); }
+.nav__call--text { padding: 0 14px; }
+@media (min-width: 860px) { .nav__links { display: flex; } .nav__actions > .nav__call:not(.nav__call--text) { display: none; } }
+@media (max-width: 380px) { .nav__call--text span { display: none; } .nav__call--text { padding: 0 10px; } }
+#contact { scroll-margin-top: 110px; }
 @media (max-width: 380px) { .nav__word { display: none; } }
 
 /* ACM SIGSPATIAL logo */
-.brand-logo { height: 40px; width: auto; flex: none; }
-@media (max-width: 380px) { .brand-logo { height: 34px; } }
-.brand-logo--lg { height: 64px; }
+.brand-logo { height: 46px; width: auto; flex: none; margin-block: -4px; }
+@media (max-width: 380px) { .brand-logo { height: 40px; } }
+.brand-logo--lg { height: 104px; margin-block: 0; }
 .nav__divider { width: 1px; height: 22px; background: rgba(255, 255, 255, .22); }
 @media (max-width: 380px) { .nav__divider { display: none; } }
 
@@ -382,11 +397,13 @@ h1, h2, h3 {
   min-height: 100vh;
   min-height: 100svh;
   display: grid;
-  place-items: center;
-  padding: calc(104px + env(safe-area-inset-top, 0px)) var(--gutter) 56px;
+  place-items: start center;
+  /* leave the top of the screen clear so the rocket and its flame show above the title */
+  padding: calc(clamp(250px, 37svh, 400px) + env(safe-area-inset-top, 0px)) var(--gutter) 56px;
   text-align: center;
 }
 .hero__inner { display: grid; justify-items: center; width: 100%; max-width: 980px; }
+.hero__sub, .hero .tag { text-shadow: 0 2px 14px rgba(0, 0, 0, .85); }
 
 .hero .eyebrow { letter-spacing: .36em; color: rgba(255, 255, 255, .85); text-shadow: 0 1px 12px rgba(0, 0, 0, .75); }
 
@@ -414,6 +431,8 @@ h1, h2, h3 {
 }
 .tag { margin-top: 18px; }
 .tag .chip { font-weight: 400; letter-spacing: .22em; text-transform: uppercase; font-size: .68rem; padding: 7px 14px; color: var(--text-2); }
+.tag .chip { flex-wrap: wrap; justify-content: center; column-gap: .45em; row-gap: 2px; background: rgba(0, 0, 0, .38); color: rgba(255, 255, 255, .88); }
+.nowrap { white-space: nowrap; }
 @media (max-width: 420px) { .tag .chip { letter-spacing: .12em; font-size: .62rem; } }
 
 .hero__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 30px; }
@@ -638,6 +657,28 @@ h1, h2, h3 {
 .elig__row p { margin-top: 4px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 
+/* ---------- FAQs ---------- */
+.faq { display: grid; gap: 8px; padding: 8px; }
+.faq__item { border-radius: 20px; background: rgba(255, 255, 255, .035); border: 1px solid rgba(255, 255, 255, .07); transition: background-color .3s var(--ease), border-color .3s var(--ease); }
+.faq__item[open] { background: rgba(255, 255, 255, .06); border-color: rgba(159, 212, 255, .28); }
+.faq__q {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  min-height: 56px; padding: 16px 20px;
+  list-style: none; cursor: pointer;
+  font: 600 clamp(1rem, 2.2vw, 1.08rem)/1.4 var(--font-display); color: #fff;
+  -webkit-tap-highlight-color: transparent;
+}
+.faq__q::-webkit-details-marker { display: none; }
+.faq__q:focus-visible { outline: 2px solid var(--ice); outline-offset: -2px; border-radius: 20px; }
+.faq__chev { flex: none; color: var(--ice); transition: transform .4s var(--ease); }
+.faq__item[open] .faq__chev { transform: rotate(180deg); }
+.faq__a { padding: 0 20px 18px; max-width: 64ch; }
+.faq__item[open] .faq__a { animation: faqIn .45s var(--ease); }
+@keyframes faqIn { from { opacity: 0; transform: translate3d(0, -6px, 0); } }
+.faq__more { margin-top: 18px; text-align: center; font-size: .95rem; }
+.faq__more a { color: var(--ice); font-weight: 600; text-underline-offset: 3px; }
+#faq { scroll-margin-top: 70px; }
+
 /* ---------- CTA ---------- */
 .cta { text-align: center; padding: clamp(36px, 7vw, 64px) clamp(20px, 5vw, 56px); }
 .cta .h2 { font-size: clamp(2rem, 6vw, 3.4rem); }
@@ -650,6 +691,7 @@ h1, h2, h3 {
 .footer__contact { display: grid; gap: 10px; margin-top: 12px; padding: 0; list-style: none; }
 .footer__contact a { text-decoration: none; color: #fff; }
 .footer__contact li { display: flex; align-items: center; gap: 10px; }
+.footer__label { margin-top: 26px; }
 .footer__copy { margin-top: 40px; font-size: .8rem; color: var(--text-3); text-align: center; }
 @media (min-width: 720px) { .footer__grid { grid-template-columns: 1.2fr 1fr; align-items: start; } }
 
