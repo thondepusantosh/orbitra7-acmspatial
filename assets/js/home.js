@@ -111,33 +111,14 @@
     setInterval(renderProblems, 1000);
   }
 
-  /* ---------- Seats bar ---------- */
-  const seats = $('seats');
+  /* ---------- Seats: the count isn't shown, but Register buttons close once all slots are taken ---------- */
   function renderSeats(registered, max) {
-    const left = Math.max(max - registered, 0);
-    const pct = Math.min(registered / max, 1) * 100;
-    $('seats-count').textContent = registered;
-    $('seats-max').textContent = max;
-    const bar = $('seats-bar');
-    bar.setAttribute('aria-valuenow', registered);
-    bar.setAttribute('aria-valuemax', max);
-    requestAnimationFrame(() => { $('seats-fill').style.transform = `translateX(${pct - 100}%)`; });
-
-    const status = $('seats-status');
-    status.classList.toggle('is-low', left > 0 && left <= 5);
-    status.classList.toggle('is-closed', left === 0);
-    status.textContent = left === 0
-      ? 'Registrations Closed'
-      : left <= 5 ? `Only ${left} spot${left === 1 ? '' : 's'} left — hurry!` : `${left} spots left`;
-    $('cta-left').textContent = left === 0
-      ? 'All 35 slots are taken. Thank you for the overwhelming response!'
-      : `${left} of ${max} team slots still open. Registration takes about 5 minutes.`;
-
-    if (left === 0) closeRegistrations();
+    if (registered < max) return;
+    $('cta-left').textContent = 'All 35 slots are taken. Thank you for the overwhelming response!';
+    closeRegistrations();
   }
 
   function closeRegistrations() {
-    seats.classList.add('is-closed');
     document.querySelectorAll('[data-register]').forEach((el) => {
       el.setAttribute('aria-disabled', 'true');
       el.setAttribute('tabindex', '-1');
@@ -154,14 +135,9 @@
   } catch (err) { /* storage unavailable */ }
 
   ORB.fetchSeats().then((s) => {
-    if (s) {
-      renderSeats(s.registered, s.max);
-      try { sessionStorage.setItem(SEATS_KEY, JSON.stringify(s)); } catch (err) { /* ignore */ }
-    } else if (!ORB.backendReady()) {
-      renderSeats(0, MAX); // backend not connected yet
-    } else if ($('seats-count').textContent === '–') {
-      $('seats-status').textContent = 'Live count unavailable right now';
-    }
+    if (!s) return;
+    renderSeats(s.registered, s.max);
+    try { sessionStorage.setItem(SEATS_KEY, JSON.stringify(s)); } catch (err) { /* ignore */ }
   });
 
   if (ORB.reduced) return; // everything below is motion
