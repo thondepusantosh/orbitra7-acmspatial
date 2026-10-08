@@ -16,7 +16,7 @@
     2: 'Intelligent Geospatial Data Processing Using AI and Machine Learning',
   };
   const YEARS = ['First', 'Second', 'Third', 'Fourth'];
-  const BRANCHES = ['AIML', 'AIDS', 'IT', 'CSE', 'ECE', 'EIE', 'CIVIL', 'MECHANICAL'];
+  const BRANCHES = ['AIML', 'AIDS', 'IT', 'CSE', 'ECE', 'EEE', 'EIE', 'CIVIL', 'MECHANICAL'];
   const MEMBER_FIELDS = ['name', 'roll', 'year', 'branch', 'section', 'phone', 'email'];
   const STEP_NAMES = ['Track', 'Team', 'Members', 'Payment'];
   const MAX_SHOT_BYTES = 5 * 1024 * 1024;

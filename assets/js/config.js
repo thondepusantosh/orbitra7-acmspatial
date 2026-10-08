@@ -26,7 +26,7 @@ window.ORBITRA7 = {
   // On 9 Oct: put the PDFs in assets/docs/ (e.g. 'assets/docs/track-1.pdf') or paste a
   // Google Drive "anyone with the link" URL, then publish. Leave '' until then.
   PROBLEM_STATEMENTS: {
-    RELEASE: '2026-10-09T00:00:00+05:30',
+    RELEASE: '2026-10-09T14:00:00+05:30', // 9 Oct, 2:00 PM IST
     TRACK_1: '',
     TRACK_2: '',
   },
