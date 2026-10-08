@@ -57,7 +57,7 @@
 
   /* ---------- Problem statements: locked until release, then downloadable ---------- */
   const PS = C.PROBLEM_STATEMENTS || {};
-  const PS_RELEASE = Date.parse(PS.RELEASE || '2026-10-09T14:00:00+05:30');
+  const PS_RELEASE = Date.parse(PS.RELEASE || '2026-10-09T18:00:00+05:30');
   const psBox = document.querySelector('.ps');
   let psLast = '';
 
@@ -83,7 +83,7 @@
 
     psBox.classList.toggle('is-live', !!anyLive);
     $('ps-status').querySelector('.ps__status-icon').textContent = anyLive ? '✅' : '📢';
-    $('ps-status-title').textContent = anyLive ? 'Problem statements are live!' : released ? 'Releasing today' : 'Releasing on 9th October 2026, 2:00 PM';
+    $('ps-status-title').textContent = anyLive ? 'Problem statements are live!' : released ? 'Releasing today' : 'Releasing on 9th October 2026, 6:00 PM';
     $('ps-status-sub').textContent = anyLive
       ? 'Download the problem statement for your track below.'
       : released ? 'The files are being uploaded. Check back here shortly.' : 'The download buttons below unlock here automatically.';
@@ -101,7 +101,7 @@
       } else {
         btn.setAttribute('aria-disabled', 'true');
       }
-      btn.innerHTML = `<svg class="icon icon--sm" aria-hidden="true"><use href="#i-${live ? 'download' : 'lock'}"/></svg><span>${live ? 'Download PDF' : released ? 'Coming shortly' : 'Unlocks 9 Oct, 2 PM'}</span>`;
+      btn.innerHTML = `<svg class="icon icon--sm" aria-hidden="true"><use href="#i-${live ? 'download' : 'lock'}"/></svg><span>${live ? 'Download PDF' : released ? 'Coming shortly' : 'Unlocks 9 Oct, 6 PM'}</span>`;
       old.replaceWith(btn);
       card.querySelector('[data-ps-meta]').textContent = live ? 'Problem statement · ready to download' : 'Problem statement · PDF';
     });
