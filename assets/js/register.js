@@ -16,8 +16,7 @@
     2: 'Intelligent Geospatial Data Processing Using AI and Machine Learning',
   };
   const YEARS = ['First', 'Second', 'Third', 'Fourth'];
-  const BRANCHES = ['AIML', 'AIDS', 'IT'];
-  const IT_ONLY_YEARS = ['Third', 'Fourth'];
+  const BRANCHES = ['AIML', 'AIDS', 'IT', 'CSE', 'ECE', 'EIE', 'CIVIL', 'MECHANICAL'];
   const MEMBER_FIELDS = ['name', 'roll', 'year', 'branch', 'section', 'phone', 'email'];
   const STEP_NAMES = ['Track', 'Team', 'Members', 'Payment'];
   const MAX_SHOT_BYTES = 5 * 1024 * 1024;
@@ -72,8 +71,7 @@
           ${field(`${p}-name`, 'Full Name', `<input class="input" id="${p}-name" type="text" maxlength="60" autocomplete="${lead ? 'name' : 'off'}" required>`)}
           ${field(`${p}-roll`, 'Roll Number', `<input class="input input--upper" id="${p}-roll" type="text" maxlength="20" autocomplete="off" autocapitalize="characters" spellcheck="false" required>`)}
           ${field(`${p}-year`, 'Year of Study', `<select class="select" id="${p}-year" required>${options(YEARS, 'Select year')}</select>`)}
-          ${field(`${p}-branch`, 'Branch', `<select class="select" id="${p}-branch" required>${options(BRANCHES, 'Select branch')}</select>`,
-            `<p class="hint hint--lock" id="${p}-branch-hint" hidden><svg class="icon icon--sm" aria-hidden="true"><use href="#i-lock"/></svg>Only IT branch for 3rd &amp; 4th years.</p>`)}
+          ${field(`${p}-branch`, 'Branch', `<select class="select" id="${p}-branch" required>${options(BRANCHES, 'Select branch')}</select>`)}
           ${field(`${p}-section`, 'Class Section', `<input class="input input--upper" id="${p}-section" type="text" maxlength="10" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="e.g. A" required>`)}
           ${field(`${p}-phone`, 'Phone Number', `<input class="input" id="${p}-phone" type="tel" inputmode="numeric" autocomplete="${lead ? 'tel-national' : 'off'}" placeholder="10-digit mobile number" required>`)}
           ${field(`${p}-email`, 'Gmail Address', `<input class="input" id="${p}-email" type="email" inputmode="email" maxlength="80" autocomplete="${lead ? 'email' : 'off'}" autocapitalize="off" spellcheck="false" placeholder="name@gmail.com" required>`)}
@@ -143,8 +141,7 @@
       case 'roll': return !v ? 'Enter roll number.' : RE.roll.test(v) ? '' : 'Enter a valid roll number (letters and digits, 4–20 characters).';
       case 'year': return v ? '' : 'Select year of study.';
       case 'branch':
-        if (!v) return 'Select branch.';
-        return IT_ONLY_YEARS.includes(mem.year) && v !== 'IT' ? 'Only IT branch for 3rd & 4th years.' : '';
+        return v ? '' : 'Select branch.';
       case 'section': return !v ? 'Enter class section.' : RE.section.test(v) ? '' : 'Enter a valid section, e.g. A or B.';
       case 'phone': return !v ? 'Enter phone number.' : RE.phone.test(v) ? '' : 'Enter a valid 10-digit mobile number starting with 6, 7, 8 or 9.';
       case 'email': return !v ? 'Enter Gmail address.' : RE.gmail.test(v) ? '' : 'Enter a valid Gmail address ending with @gmail.com.';
@@ -212,22 +209,6 @@
     }
     if (first && focus) focusField(first);
     return !first;
-  }
-
-  /* ---------- Year → branch rule ---------- */
-  function applyYearRule(n) {
-    const br = byId(`m${n}-branch`);
-    const lock = IT_ONLY_YEARS.includes(byId(`m${n}-year`).value);
-    if (lock && !br.disabled) {
-      br.dataset.prev = br.value;
-      br.value = 'IT';
-      br.disabled = true;
-      setErr(br.id, '');
-    } else if (!lock && br.disabled) {
-      br.disabled = false;
-      if (br.dataset.prev) br.value = br.dataset.prev;
-    }
-    byId(`m${n}-branch-hint`).hidden = !lock;
   }
 
   /* ---------- Team size → member cards, fee, QR ---------- */
@@ -599,8 +580,6 @@
     const el = e.target;
     if (el.name === 'track') setErr('track', '');
     if (el.id === 'team-size') onSizeChange();
-    const ym = /^m(\d)-year$/.exec(el.id);
-    if (ym) applyYearRule(Number(ym[1]));
     if (el.matches('.select')) setErr(el.id, fieldError(el.id));
     if (el === shotInput) onShot(el.files[0]);
     scheduleSave();
@@ -633,7 +612,6 @@
     let start = restoreDraft();
     const qTrack = new URLSearchParams(location.search).get('track');
     if (qTrack === '1' || qTrack === '2') $(`input[name="track"][value="${qTrack}"]`, form).checked = true;
-    for (let n = 1; n <= 5; n++) applyYearRule(n);
     onSizeChange();
     for (let s = 1; s < start; s++) {
       if (!validateStep(s, false)) { start = s; break; }
